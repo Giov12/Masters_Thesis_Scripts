@@ -44,7 +44,7 @@ python AF_Plot_Using_VCF.py -i file.vcf
 ```
 The `-c` flag can be used to specify color of the line
 
-The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency **within** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap)
+The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency ***within*** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap)
 
 ```python
 python Genepop2MafGraph.py -i genepop_file.txt -p population_map.txt
