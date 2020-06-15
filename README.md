@@ -1,4 +1,4 @@
-# Exploratory_Scripts
+# Exploratory Scripts
 Scripts Made During My Master's working with RAD-Seq Data
 
 Files were tested using results from the [ipyrad](https://ipyrad.readthedocs.io/en/latest/) and [STACKS](https://catchenlab.life.illinois.edu/stacks/) pipelines
@@ -54,4 +54,31 @@ The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2
 
 ```python
 python Pairwise_Fst_Heatmap.py -i genepop_file.txt -p population_map.txt
+```
+The *Plot_Fis_Vals.py* script produces a bar graph showing the average Fis value for each population. This script also accepts the same population map and genepop file as the two scripts listed above.
+
+```python
+python Plot_Fis_Vals.py -i genepop_file.txt -p population_map.txt
+```
+
+The *Missing_data_phylip.py* and *Missing_data_Structure.py* calculate the amount of missing data in these types of files. Phylip files are standardized so this only needs one input
+```python
+python Missing_data_phylip.py -i file.phylip
+```
+
+Since structure files can vary in the amount of metadata contained within them, the *Missing_data_Structure.py* script requires to column number where the genotype information begins using the first column flag `-fc` flag. If marker labels are present, the optional header line flag (`-hl`) can be used to specify which line number this information is located on. `-mi` is the missing integer flag that is used to specify the value used for a missing genotype.
+```python
+python Missing_data_Structure.py -i file.structure -mi -9 -fc 3 -hl 1
+```
+Both of these files have an optional `-o` flag to specify an output if the user is wanting to save the tsv file.
+
+The *Filter_blastx_hits.py* script is a custom python script that takes blastx results in tsv format (without a header) and contains 25 columns and filters it to the *"best"* hit. This is done in a few steps.
+1. Filter out blasts hits with non-RefSeq Accession IDs
+2. If any blast hits for query sequences that are **completely** removed, return those blast hits
+3. Remove blast hits with descriptions matching *hypothetical protein* and *uncharacterized protein*
+4. Repeat Step 2
+5. Return the blast hits with the lowest e-values.
+   
+```python
+python -i blastx_hits.tsv -o filtered_blastx_hits.tsv #specify output
 ```

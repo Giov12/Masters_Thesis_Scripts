@@ -25,7 +25,7 @@ def get_arguments():
         "--output",
         help="Output Name",
         required=False,
-        default="Missing_Data_Structure.tsv",
+        default=None,
     )
 
     args = parser.parse_args()
@@ -84,7 +84,8 @@ def main():
         output_name,
     ) = get_arguments()  # define file
     str_df = get_missing_stats(file, missing_int, first_column, header_line)
-    str_df.to_csv(str(output_name), sep="\t", index=False)
+    if output_name != None:
+        str_df.to_csv(str(output_name), sep="\t", index=False)
     print(str_df.to_string(index=False))
 
 

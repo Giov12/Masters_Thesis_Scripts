@@ -12,7 +12,7 @@ def get_arguments():
     parser.add_argument(
         "-i", "--input", help="Input Phylip File", required=True)
     parser.add_argument(
-        "-o", "--output", help="Specify output name", required=True)
+        "-o", "--output", help="Specify output name", required=False, default="None")
 
     args = parser.parse_args()
 
@@ -80,7 +80,8 @@ def main():
             "Percent Missing",
         ]
     ]
-    miss_df.to_csv(str(output_name), sep="\t", index=False)
+    if output_name != None:
+        miss_df.to_csv(str(output_name), sep="\t", index=False)
     print(miss_df.to_string(index=False))
 
 
