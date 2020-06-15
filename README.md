@@ -82,3 +82,9 @@ The *Filter_blastx_hits.py* script is a custom python script that takes blastx r
 ```python
 python -i blastx_hits.tsv -o filtered_blastx_hits.tsv #specify output
 ```
+
+The *Filter_Accessions_by_Counts.py* script takes a space delimited *Counts* file where the first column is the number of occurences (i.e. counts) and the second column is a specific Accession ID. The script takes a tsv file where a column titled **refseq_peptide_predicted** is used to help extract the same number of rows for a particular accession ID as specified by the *counts* file.
+
+```python
+python Filter_Accesssions_by_Counts.py -i Main_Accessions_Dataframe.tsv -c Counts.txt -o Filtered_Accessions_Dataframe.tsv #specify output
+```
