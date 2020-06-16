@@ -20,7 +20,7 @@ file=${1?Error: Please Provide Phylip File}
 	merged=$(tail -n+2 $file | grep -v '#'| cut -f1 | paste - <(echo "$total_count") <(echo "$present") <(echo "$count") <(echo "$percent"))
 
 #Add header and output results as tsv
-	echo 'Population_ID     Marker_Count    Sites_Present   Number_of_Ns    Percent_of_Ns' | cat - <(echo "$merged")  > Missing_Data_Phylip.tsv
+	echo 'Sample_ID     Marker_Count    Sites_Present   Number_of_Ns    Percent_of_Ns' | cat - <(echo "$merged")  > Missing_Data_Phylip.tsv
 
 #Print results to the shell
 echo 'Done!'
