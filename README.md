@@ -29,8 +29,14 @@ an input file
 ```python
 python FastaSeqLen2Histo.py -i file.fasta
 ```
+![Histogram1](/media/gio/GIO/Other/GitHub_Images/Histogram1.png)
 
 By default it will generate a grey bar graph. Additional parameters allow you to add some customization such as `-c` to change the *color*, `-t` for a *Histogram title*, `-x` to change the *label for the X-axis*, and `-y` to change the *label for the Y-axis*.
+
+```python
+python FastaSeqLen2Histo.py -i file.fasta -c red -t My New Title -x My Sequence Length Distribution -y My Frequency Counts
+```
+![Histogram1](/media/gio/GIO/Other/GitHub_Images/Histogram2.png)
 
 The *ipyrad_loci2fasta.py* script converts the *.loci* file generated from ipyrad to a fasta file.
 ```python
