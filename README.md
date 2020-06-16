@@ -137,6 +137,7 @@ In additional to the Fis values, QIntra (Gene Diversity Between individuals) and
 | ------ | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | QIntra | 0.2997      | 0.2859      | 0.2915      | 0.2911      | 0.2863      | 0.2937      | 0.2929      |
 | QInter | 0.2809      | 0.2873      | 0.2781      | 0.2818      | 0.2872      | 0.2836      | 0.2768      |
+| Fis    | -0.0673     | 0.0049      | -0.048      | -0.0328     | 0.0031      | -0.0354     | -0.0581     |
 
 The *Missing_data_phylip.py* and *Missing_data_Structure.py* calculate the amount of missing data in these types of files. Phylip files are standardized so this only needs one input
 ```python
