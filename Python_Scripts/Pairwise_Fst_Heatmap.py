@@ -113,7 +113,7 @@ def main():
     avg = calc_pairwise_fst(file)
     fig, pop_key = plot_heatmap(avg, pop_map)
     write_to_tsv(avg, pop_key)
-    fig.savefig("Average_Multilocus_Fst_Plot.png")
+    plt.savefig("Average_Multilocus_Fst_Plot.png")
     plt.show()
 
 

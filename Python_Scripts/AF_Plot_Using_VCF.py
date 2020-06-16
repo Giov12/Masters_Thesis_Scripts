@@ -68,7 +68,7 @@ def main():
     AF_df = count_afs(file)
     fig = plot_af(AF_df, color)
     if save_results == True:
-        fig.savefig("AF_Counts.png")
+        plt.savefig("AF_Counts.png")
         AF_df.to_csv("AF_Counts.tsv", sep="\t", index=False)
         plt.show()
     else:

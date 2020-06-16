@@ -75,7 +75,7 @@ def main():
     file, pop_map = get_arguments()
     fis_df = calc_Fis(file, pop_map)
     fig = plot_Fis(fis_df)
-    fig.savefig("Fis_Stats.png")
+    plt.savefig("Fis_Stats.png")
     plt.show()
     print(fis_df)
     print(

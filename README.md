@@ -104,25 +104,35 @@ python Genepop2MafGraph.py -i genepop_file.txt -p population_map.txt
 ![alt text](Python_Scripts/Maf_Plot.png "MAF Plot Within Populations")
 
 The table created will have the Population Names for row names and the allele frequency bins as column names. The bins start from 0-0.5, in intervals of 0.025
-|             | 0.0 | 0.025 | 0.050 | 0.075 |
-| ----------- | --- | ----- | ----- | ----- |
-| Population1 | 0   | 0     | 0     | 199   |
-| Population2 | 0   | 0     | 0     | 1792  |
-| Population3 | 0   | 0     | 0     | 2043  |
+|             | 0.0 | 0.025 | 0.050 | 0.075 | 0.100 | 0.150 | 0.175 | 0.200 | 0.225 |
+| ----------- | --- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- |
+| Population1 | 0   | 0     | 0     | 1990  | 0     | 2252  | 530   | 2177  | 448   |
+| Population2 | 0   | 0     | 0     | 1792  | 0     | 2410  | 273   | 2412  | 262   |
+| Population3 | 0   | 0     | 0     | 2043  | 0     | 2231  | 578   | 2160  | 475   |
 
 The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2MafGraph.py* script, but produces a heatmap showing the average Fst values between populations.
+
 
 ```python
 python Pairwise_Fst_Heatmap.py -i genepop_file.txt -p population_map.txt
 ```
 Due to the nature of how Fst values are calculated, it is possible to generate negative values, which are to be interpreted as 0.
 ![alt text](Python_Scripts/Average_Multilocus_Fst_Plot.png "Average Fst Values")
+These values are also stored into a tsv file that with just 2 columns, with column 1 being the names of the populations compared separated by a `_` and the average Fst value
+|                          |        |
+| ------------------------ | ------ |
+| population2_population1  | 0.0029 |
+| population3_population1_ | 0.0012 |
+
 
 The *Plot_Fis_Vals.py* script produces a bar graph showing the average Fis value for each population. This script also accepts the same population map and genepop file as the two scripts listed above.
 
 ```python
 python Plot_Fis_Vals.py -i genepop_file.txt -p population_map.txt
+![alt text](Python_Scripts/Fis_Stats.png "Fis Values")
 ```
+
+
 
 The *Missing_data_phylip.py* and *Missing_data_Structure.py* calculate the amount of missing data in these types of files. Phylip files are standardized so this only needs one input
 ```python
