@@ -48,7 +48,10 @@ This script requires the *vcf* file to have the *AF* annotation.
 ```python
 python AF_Plot_Using_VCF.py -i file.vcf
 ```
+![alt text](Python_Scripts/AF_Freqs1.png "Allele Frequencies 1")
+
 The `-c` flag can be used to specify color of the line
+![alt text](Python_Scripts/AF_Freqs2.png "Allele Frequencies 2")
 
 The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency ***within*** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap)
 
