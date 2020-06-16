@@ -110,22 +110,22 @@ The table created will have the Population Names for row names and the allele fr
 | Population2 | 0   | 0     | 0     | 1792  | 0     | 2410  | 273   | 2412  | 262   |
 | Population3 | 0   | 0     | 0     | 2043  | 0     | 2231  | 578   | 2160  | 475   |
 
-The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2MafGraph.py* script, but produces a heatmap showing the average Fst values between populations.
+The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2MafGraph.py* script, but produces a heatmap showing the average F<sub>st</sub> values between populations.
 
 
 ```python
 python Pairwise_Fst_Heatmap.py -i genepop_file.txt -p population_map.txt
 ```
-Due to the nature of how Fst values are calculated, it is possible to generate negative values, which are to be interpreted as 0.
+Due to the nature of how F<sub>st</sub>  values are calculated, it is possible to generate negative values, which are to be interpreted as 0.
 ![alt text](Python_Scripts/Average_Multilocus_Fst_Plot.png "Average Fst Values")
-These values are also stored into a tsv file that with just 2 columns, with column 1 being the names of the populations compared separated by a `_` and the average Fst value
+These values are also stored into a tsv file that with just 2 columns, with column 1 being the names of the populations compared separated by a `_` and the average F<sub>st</sub>  value.
 |                          |        |
 | ------------------------ | ------ |
 | population2_population1  | 0.0029 |
 | population3_population1_ | 0.0012 |
 
 
-The *Plot_Fis_Vals.py* script produces a bar graph showing the average Fis value for each population. This script also accepts the same population map and genepop file as the two scripts listed above.
+The *Plot_Fis_Vals.py* script produces a bar graph showing the average F<sub>is</sub>  value for each population. This script also accepts the same population map and genepop file as the two scripts listed above.
 
 ```python
 python Plot_Fis_Vals.py -i genepop_file.txt -p population_map.txt
