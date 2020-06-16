@@ -165,7 +165,7 @@ Both of these files have an optional `-o` flag to specify an output if the user 
 
 The *Filter_blastx_hits.py* script is a custom python script that takes blastx results in tsv format (without a header) and contains 25 columns and filters it to the *"best"* hit. This is done in a few steps.
 1. Filter out blasts hits with non-RefSeq Accession IDs
-2. If any blast hits for query sequences that are **completely** removed, return those blast hits
+2. If any blast hits for a query sequence  **completely** removes the query sequence from the dataframe, return those blast hits
 3. Remove blast hits with descriptions matching *hypothetical protein* and *uncharacterized protein*
 4. Repeat Step 2
 5. Return the blast hits with the lowest e-values.
