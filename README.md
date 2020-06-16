@@ -129,20 +129,37 @@ The *Plot_Fis_Vals.py* script produces a bar graph showing the average Fis value
 
 ```python
 python Plot_Fis_Vals.py -i genepop_file.txt -p population_map.txt
-![alt text](Python_Scripts/Fis_Stats.png "Fis Values")
 ```
+![alt text](Python_Scripts/Fis_Stats.png "Fis Values")
 
-
+In additional to the Fis values, QIntra (Gene Diversity Between individuals) and QInter values are also saved.
+|        | population1 | population2 | population3 | population4 | population5 | population6 | population7 |
+| ------ | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| QIntra | 0.2997      | 0.2859      | 0.2915      | 0.2911      | 0.2863      | 0.2937      | 0.2929      |
+| QInter | 0.2809      | 0.2873      | 0.2781      | 0.2818      | 0.2872      | 0.2836      | 0.2768      |
 
 The *Missing_data_phylip.py* and *Missing_data_Structure.py* calculate the amount of missing data in these types of files. Phylip files are standardized so this only needs one input
 ```python
 python Missing_data_phylip.py -i file.phylip
 ```
+Produces a table such as the one below.
+| Sample  | Number of Sites | Sites Genotyped | Missing Sites | Percent Missing |
+| ------- | --------------- | --------------- | ------------- | --------------- |
+| Sample1 | 100             | 80              | 20            | 20%             |
+| Sample2 | 100             | 82              | 18            | 18%             |
+| Sample3 | 100             | 94              | 6             | 6%              |
 
 Since structure files can vary in the amount of metadata contained within them, the *Missing_data_Structure.py* script requires to column number where the genotype information begins using the first column flag `-fc` flag. If marker labels are present, the optional header line flag (`-hl`) can be used to specify which line number this information is located on. `-mi` is the missing integer flag that is used to specify the value used for a missing genotype.
 ```python
 python Missing_data_Structure.py -i file.structure -mi -9 -fc 3 -hl 1
 ```
+The same table is produced as above.
+| Sample  | Number of Sites | Sites Genotyped | Missing Sites | Percent Missing |
+| ------- | --------------- | --------------- | ------------- | --------------- |
+| Sample1 | 100             | 80              | 20            | 20%             |
+| Sample2 | 100             | 82              | 18            | 18%             |
+| Sample3 | 100             | 94              | 6             | 6%              |
+
 Both of these files have an optional `-o` flag to specify an output if the user is wanting to save the tsv file.
 
 The *Filter_blastx_hits.py* script is a custom python script that takes blastx results in tsv format (without a header) and contains 25 columns and filters it to the *"best"* hit. This is done in a few steps.
