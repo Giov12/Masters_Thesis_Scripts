@@ -96,17 +96,28 @@ python AF_Plot_Using_VCF.py -i file.vcf -c purple
 ```
 ![alt text](Python_Scripts/AF_Freqs2.png "Allele Frequencies 2")
 
-The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency ***within*** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap)
+The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency ***within*** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap). The calculations are then saved to a tsv.
 
 ```python
 python Genepop2MafGraph.py -i genepop_file.txt -p population_map.txt
 ```
+![alt text](Python_Scripts/Maf_Plot.png "MAF Plot Within Populations")
 
-The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2MafGraph.py* script, but produces a heatmap showing the Fst values between populations.
+The table created will have the Population Names for row names and the allele frequency bins as column names. The bins start from 0-0.5, in intervals of 0.025
+|             | 0.0 | 0.025 | 0.050 | 0.075 |
+| ----------- | --- | ----- | ----- | ----- |
+| Population1 | 0   | 0     | 0     | 199   |
+| Population2 | 0   | 0     | 0     | 1792  |
+| Population3 | 0   | 0     | 0     | 2043  |
+
+The *Pairwise_Fst_Heatmap.py* script takes the same input files as the *Genepop2MafGraph.py* script, but produces a heatmap showing the average Fst values between populations.
 
 ```python
 python Pairwise_Fst_Heatmap.py -i genepop_file.txt -p population_map.txt
 ```
+Due to the nature of how Fst values are calculated, it is possible to generate negative values, which are to be interpreted as 0.
+![alt text](Python_Scripts/Average_Multilocus_Fst_Plot.png "Average Fst Values")
+
 The *Plot_Fis_Vals.py* script produces a bar graph showing the average Fis value for each population. This script also accepts the same population map and genepop file as the two scripts listed above.
 
 ```python

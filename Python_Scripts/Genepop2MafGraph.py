@@ -113,7 +113,7 @@ def main():
     mafs_df = calc_maf(file, pop_dict, pop_names)
 
     fig = plot_maf(mafs_df)
-    fig.savefig("Maf_Plot.png")
+    plt.savefig("Maf_Plot.png")
     plt.show()
 
 
