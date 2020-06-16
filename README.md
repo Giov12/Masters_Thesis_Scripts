@@ -168,7 +168,7 @@ The *Filter_blastx_hits.py* script is a custom python script that takes blastx r
 2. If any blast hits for a query sequence  **completely** removes the query sequence from the dataframe, return those blast hits
 3. Remove blast hits with descriptions matching *hypothetical protein* and *uncharacterized protein*
 4. Repeat Step 2
-5. Return the blast hits with the lowest e-values for each query sequence
+5. Return the blast hit with the lowest e-value for each query sequence
    
 ```python
 python -i blastx_hits.tsv -o filtered_blastx_hits.tsv #specify output
