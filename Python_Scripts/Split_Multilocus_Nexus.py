@@ -56,7 +56,9 @@ def Make_N_Missing(nexus_file):
             with open(file, "r") as f:
                 nex_data = f.read()
 
-            nex = nex.replace("missing=?", "missing=N")  # replace missing character
+            nex_data = nex_data.replace(
+                "missing=?", "missing=N"
+            )  # replace missing character
 
             with open(file, "w") as f:
                 f.write(nex_data)
