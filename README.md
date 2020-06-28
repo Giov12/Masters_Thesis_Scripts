@@ -180,7 +180,7 @@ The *Filter_Accessions_by_Counts.py* script takes a space delimited *Counts* fil
 python Filter_Accesssions_by_Counts.py -i Main_Accessions_Dataframe.tsv -c Counts.txt -o Filtered_Accessions_Dataframe.tsv #specify output
 ```
 
-The *Split_Multilocus_Nexus.py* was designed to split the multilocus nexus file generated from a ipyrad analysis into separate nexus files for each locus. Slight modifications can be made to the script to change the resulting files, such as keeping the missing character as *?* instead of *N*, or changing the format of the files' names (currently starting with *Locus_*).I highly recommend running this script in a directory where you plan on storing all of the files generated from your file, which depends on the number of loci in the nexus file. A single nexus file is the only input this script requires.
+The *Split_Multilocus_Nexus.py* was designed to split the multilocus nexus file generated from a ipyrad analysis into separate nexus files for each locus. Slight modifications can be made to the script to change the resulting files, such as keeping the missing character as *?* instead of *N*, or changing the format of the files' names (currently starting with *Locus_*). Currently, it only looks for the sequence sections indicated by the "charset = " found within the *nexus* file, which can also be easily modified. I highly recommend running this script in a directory where you plan on storing all of the files generated from your file, which depends on the number of loci in the nexus file. A single nexus file is the only input this script requires.
 ```python
 python Split_Multilocus_Nexus.py -i MultiLocus.nex
 ```
