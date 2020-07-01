@@ -184,3 +184,8 @@ The *Split_Multilocus_Nexus.py* was designed to split the multilocus nexus file 
 ```python
 python Split_Multilocus_Nexus.py -i MultiLocus.nex
 ```
+
+The *Zero2OneBased_Nexus.py* script changes the 0-Based Index nexus file created by ipyrad into a 1-Based Indexed nexus file by adding 1 to each starting position within the *charset* positions. `Charset` paritions will also begin at 1 instead of 0. Must specify an output name for the new file
+```python
+python Zero2OneBased_Nexus.py -i Nexus_file.nex -o New_Nexus_file.nex
+```
