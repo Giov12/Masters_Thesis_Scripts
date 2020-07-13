@@ -189,3 +189,8 @@ The *Zero2OneBased_Nexus.py* script changes the 0-Based Index nexus file created
 ```python
 python Zero2OneBased_Nexus.py -i Nexus_file.nex -o New_Nexus_file.nex
 ```
+
+The *RatePartitionPlots2pdf.py* script takes a *rate* file generated using [IQ-TREE](http://www.iqtree.org/) that is broken up into seperate partitions, and plots a simple line plot for each partition and saves the output into a pdf. The average rate is shown at the top right corner for each figure. After going through all the partitions, one last plot is generated with all the rate values for each partition plotted together as if they were concatentated together. Optional `-o` and `-c` flags let's you choose the name of the output and the color of the line plots.
+```python
+python RatePartitionPlots2pdf.py -i iq_tree_output.rate -o Output_name.pdf -c Blue
+```
