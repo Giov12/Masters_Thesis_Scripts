@@ -83,19 +83,6 @@ The *ipyrad_loci2fasta.py* script converts the *.loci* file generated from ipyra
 python ipyrad_loci2.fasta.py -i ipyrad_output.loci -o ipyrad_output.fasta #specify output name
 ```
 
-The *AF_Plot_Using_VCF.py* script takes a *vcf* file as an input and plots the number of alleles for each Allele Frequency in the file onto a simple line plot.
-This script requires the *vcf* file to have the *AF* annotation.
-```python
-python AF_Plot_Using_VCF.py -i file.vcf
-```
-![alt text](Python_Scripts/AF_Freqs1.png "Allele Frequencies 1")
-
-The `-c` flag can be used to specify color of the line
-```python
-python AF_Plot_Using_VCF.py -i file.vcf -c purple
-```
-![alt text](Python_Scripts/AF_Freqs2.png "Allele Frequencies 2")
-
 The *Genepop2MafGraph.py* script calculates and plots the minor allele frequency ***within*** populations. The samples are divided by population depending on a *population map*, similar to the same format used in the [STACKS Software](https://catchenlab.life.illinois.edu/stacks/manual/#popmap). The calculations are then saved to a tsv.
 
 ```python
@@ -201,3 +188,19 @@ python RatePartitionPlots2pdf.py -i iq_tree_output.rate -o Output_name.pdf -c Re
 ```
 An example of a plot is shown below.
 ![alt text](Python_Scripts/Example_Rate_Plot.png "Rate Plot for Partition 1")
+
+The *Nexus2Fasta.py* and *Fasta2Nexus.py* scripts use Biopython to convert between the two data formats. Both require you to specify an output name.
+```python
+python Nexus2Fasta.py -i input.nex -o Output.fasta #usuage
+python Fasta2Nexus.py -i input.fasta -o Output.nex
+```
+
+The *Get_Concat_Seq_From_Bed.py* script treats a bed file as a data frame and creates a concatenated sequence of the mapped regions using the reference genome in fasta format used for the creation of the bed file.
+```python
+python Get_Concat_Seq_From_Bed.py -r Reference_Genome.fasta -b Bedfile.bed -o Optional_Output_Name.fasta
+```
+
+The *STACKS_SamplesFa2StackedLoci.py* script takes in the *populations.samples.fa* created in the populations program in the STACKS suite and creates a *.loci* file, similar to what ipyrad generates. Clusters are formed by the *Locus_#* in the sequence names. Currently, all differences (including heterozygous sites) are flagged as a difference and marked as a variation. Will add modifications in the future to accept a population map to flag population-specific sites instead of all variant positions between reads.
+```python
+python STACKS_SamplesFa2StackedLoci.py -i populations.samples.fa -o Optional_Output_Name.loci
+```
