@@ -197,8 +197,14 @@ python Fasta2Nexus.py -i input.fasta -o Output.nex
 
 The *Get_Concat_Seq_From_Bed.py* script treats a bed file as a data frame and creates a concatenated sequence of the mapped regions using the reference genome in fasta format used for the creation of the bed file.
 ```python
-python Get_Concat_Seq_From_Bed.py -r Reference_Genome.fasta -b Bedfile.bed -o Optional_Output_Name.fasta
+python Get_Concat_Seq_From_Bed.py -r Reference_Genome.fasta -b Bedfile.bed -o Optional_Output_Name.txt
 ```
+
+Similarily to the *Get_Concat_Seq_From_Bed.py*, the *GetPutativeOrthologsFromLoci.py* script subsets a reference genome in fasta format using another file with mapping coordinates. In this script, putative orthologs (i.e. regions where reads aligned) are extracted using the *.loci* created in ipyrad. A fasta file for these individual reads is then generated.
+```python
+python GetPutativeOrthologsFromLoci.py -i input.loci -r Reference_Genome.fasta -o Optional_Output_name.fasta
+```
+
 
 The *STACKS_SamplesFa2StackedLoci.py* script takes in the *populations.samples.fa* created in the populations program in the STACKS suite and creates a *.loci* file, similar to what ipyrad generates. Clusters are formed by the *Locus_#* in the sequence names. Currently, all differences (including heterozygous sites) are flagged as a difference and marked as a variation. Will add modifications in the future to accept a population map to flag population-specific sites instead of all variant positions between reads.
 ```python
