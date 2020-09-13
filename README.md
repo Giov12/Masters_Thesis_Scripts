@@ -195,7 +195,7 @@ python Nexus2Fasta.py -i input.nex -o Output.fasta #usuage
 python Fasta2Nexus.py -i input.fasta -o Output.nex
 ```
 
-The *Get_Concat_Seq_From_Bed.py* script treats a bed file as a data frame and creates a concatenated sequence of the mapped regions using the reference genome in fasta format used for the creation of the bed file.
+The *Get_Concat_Seq_From_Bed.py* script parses a bed file and creates a concatenated sequence of the mapped regions using the reference genome in fasta format used for the creation of the bed file.
 ```python
 python Get_Concat_Seq_From_Bed.py -r Reference_Genome.fasta -b Bedfile.bed -o Optional_Output_Name.txt
 ```
